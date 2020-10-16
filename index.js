@@ -11,6 +11,7 @@ const askAction = () => {
 const askTable = ({action} = actions) => {
     return new Promise((resolve,reject) => {
         if(action === "exit") return resolve(action);
+        if(action === "update") return resolve({action: action, table: "employee"});
         const answers = {action: action};
         questions.tables.message = `What would you like to ${action}?`;
         inquirer.prompt(questions.tables).then(({table} = tables) => {
@@ -179,10 +180,10 @@ const runPrompt = () => {
                 break;
 
             default:
-                console.log("\n")
+                console.log("\n");
                 console.table(results);
                 console.log("\n");
-                runPrompt()
+                runPrompt();
                 break;
         }
     }).catch(err => console.log(err));

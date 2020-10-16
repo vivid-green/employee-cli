@@ -118,7 +118,7 @@ const queries = {
             });
             // console.log(query.sql);
         })
-    },
+    }
 }
 
 module.exports = queries;

@@ -1,4 +1,4 @@
-const action = ["View","Add","Update","Delete","Exit"];
+const action = ["View","Add","Delete","Exit"];
 const tables = ["Employee", "Role", "Department"];
 
 const questions = {
@@ -79,6 +79,23 @@ const questions = {
                 name: "name",
                 choices: list,
                 message: "Which record should be deleted?"
+            },
+        ];
+        return questions;
+    },
+    update: function(employees,roles) {
+        const questions = [
+            {
+                type: "list",
+                name: "employee",
+                choices: employees,
+                message: "Which employee would you like to update?"
+            },
+            {
+                type: "list",
+                name: "role",
+                choices: roles,
+                message: "What is the new employee role?"
             },
         ];
         return questions;
